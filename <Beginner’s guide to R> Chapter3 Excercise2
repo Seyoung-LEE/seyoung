@@ -1,0 +1,48 @@
+# <Beginner’s guide to R> Chapter3 Excercise2
+
+#Read deep sea research data
+setwd("D:/Desktop/data/BookData")
+ISIT <- read.table(file = "ISIT.csv", header = TRUE, sep = ",")
+names(ISIT)
+str(ISIT)
+
+#Extract the data from station = 1
+ISIT.Station1 <- ISIT[ISIT$Station == 1,]
+
+#How many observations were made at this station? 
+nrow(ISIT.Station1)
+
+#What are the minimum, median, mean, and maximum sampled depth at station 1? 
+min(ISIT.Station1$Sample.Depth)
+median(ISIT.Station1$Sample.Depth)
+mean(ISIT.Station1$Sample.Depth)
+max(ISIT.Station1$Sample.Depth)
+
+#What are the minimum, median, mean, and maximum sampled depth at station 2? At station 3?
+#Repeat the whole proces for station 2..and 3
+#station 2
+ISIT.Station2 <- ISIT[ISIT$Station == 2,]
+nrow(ISIT.Station2)
+min(ISIT.Station2$Sample.Depth)
+median(ISIT.Station2$Sample.Depth)
+mean(ISIT.Station2$Sample.Depth)
+max(ISIT.Station2$Sample.Depth)
+#station 3
+ISIT.Station3 <- ISIT[ISIT$Station == 3,]
+nrow(ISIT.Station3)
+min(ISIT.Station3$Sample.Depth)
+median(ISIT.Station3$Sample.Depth)
+mean(ISIT.Station3$Sample.Depth)
+max(ISIT.Station3$Sample.Depth)
+
+#Identify any stations with considerably fewer observations. 
+table(ISIT$Station)
+ISIT.Station.new <- ISIT[ISIT$Station != 4 & ISIT$Station != 5,]
+table(ISIT.Station.new$Station)
+
+#Extract the data from 2002. Extract the data from April (of all years).
+#Extract the data that were measured at depths greater than 2000 meters (from all years and months). Show the data according to increasing depth values.
+#Show the data that were measured at depths greater than 2000 meters in April.
+# > There is any yearly, monthly data in 'ISIT.xlsx' file attached at the homepage.
+
+
